@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+				<meta http-equiv="Content-Type" content="text/html;" />
+                <title>My Bank - 3DSecure Authentication</title>
+                <link rel="STYLESHEET" type="text/css" href="css/demo.css" />
+                <link rel="stylesheet" type="text/css" href="threedsecure/simulator/css/demo.css" />
+                <script type="text/javascript">
+
+                	function checkForm()
+                	{
+                      var select = document.getElementById("returnCode");
+                      if(select.options[select.selectedIndex].value == 0)
+                      {
+                          alert("Please choose a return code");
+                          return false;
+                      }
+                      else
+                      {
+                      	var returnCode = document.getElementById("returnCode")
+                        return true;
+                      }
+                	}
+                  function resetSelect() 
+                  {    
+                     var select = document.getElementById("returnCode");
+                     select.selectedIndex = 0;
+                  }
+                	
+                </script>         
+            </head>
+    <body> 
+    <div id="frameDiv">
+       
+    <div id="hint"></div>
+<div id="simulatorDiv">SIMULATION</div>
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<td colspan="2"> </td>
+	</tr>
+	<tr>		
+		<td colspan="2"> </td>
+	</tr>
+	<tr>	
+		<td>Personal Assurance Message:</td><td>My favourite travel destination is Iceland.</td>
+	</tr>
+	<tr>
+		<td colspan="2"> </td>
+	</tr>
+	<tr><td valign="top"><font color="#FF0000">Warning:</font></td><td><font color="#FF0000">Acquirer Bin exceeds the maximum length of 11<br /></font></td></tr>
+	<tr>
+		<td colspan="2"> </td>
+	</tr>
+	<tr>		
+		<td colspan="2" align="left">Payment Details:</td>
+	</tr>
+	<tr>		
+		<td colspan="2"> </td>
+	</tr>
+	<tr>		
+		<td>Merchant Name</td><td>Demoshop</td>
+	</tr>
+	<tr>		
+		<td>Merchant Country</td><td>Germany</td>
+	</tr>
+	
+	
+
+	<tr>		
+		<td>Purchase Amount</td><td>1.05 EUR</td>
+	</tr>
+	<tr>		
+		<td>Purchase Item</td><td>not supplied by merchant</td>
+	</tr>
+	<tr>		
+		
+		<td>Date</td><td>29.06.2017</td>
+	</tr>	
+	<tr>		
+		<td>Your Card Number Is</td><td>************1234</td> 
+	</tr>
+	<tr>		
+		<td colspan="2"> </td>
+	</tr>
+	<tr>		
+	   <form method="POST" id="simulation" name="simulationForm" action="https://test.ppipe.net/connectors/asyncresponse_simulator;jsessionid=78770BE1B48526A042DC0BC92D2DEDF9.sbg-vm-con01?asyncsource=THREEDSECURE&amp;ndcid=8a82941856a2ae3a0156b8078fb127bb_b8cb390374bf426bbb5c14369a0986c1" onsubmit="return checkForm()"></form>
+				<input type="hidden" value="8a82944a5cee405d015cf37567bb7fdf" name="MD" />
+				<input type="hidden" value="testPaRes" name="PaRes" />
+				<input type="hidden" value="8a82941856a2ae3a0156b8078fb127bb_b8cb390374bf426bbb5c14369a0986c1" name="ndcid" />
+				</tr><tr><td><font size="3">Choose expected return code</font></td><td>
+				<select id="returnCode" name="returnCode" class="fixedWidthDropDown">
+		            <option value="CARD_DEFAULT">Card Default</option>
+		            <option value="000.000.000">Successful</option>
+		            <option value="100.380.401">User Authentication Failed</option>
+		            <option value="100.390.102">PARes Validation failed</option>
+		            <option value="100.390.103">Signature error</option>
+		            <option value="100.390.112">Technical Error in 3D system</option>
+				</select>
+			</td></tr>
+			<tr>
+				<td colspan="2"> </td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="   Submit   " name="B2" /></td>
+				<td><input type="reset" value="   Reset   " name="B3" /></td>				
+		
+	</tr>
+	<tr>		
+		<td colspan="2"> </td>
+	</tr>	
+	<tr>		
+		<td colspan="2" width="350">Note: This is a test page simulating 3D Secure (Verified by VISA, Mastercard Securecode) authentication at your creditcard issuing bank's 3D Secure site. You can type in any 3D Secure password you like.</td>
+	</tr>
+</tbody></table>
+</div>
+ 
+</body></html>

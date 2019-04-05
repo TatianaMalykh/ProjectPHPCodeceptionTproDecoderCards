@@ -1,0 +1,215 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Init transaction</title>
+    	<meta name="description" content="Моя форма" />
+        <link rel="stylesheet" href="styles/styles.css" />
+        <script language="javascript">
+    function setNewAction(radioGroupObj){
+		for(var i = 0 ; i &lt; radioGroupObj.length ; i++){
+                if(radioGroupObj[i].checked){
+                     document.forms[0].action = radioGroupObj[i].value;
+                }
+        }document.forms[0].submit();
+    }
+            </script>
+
+</head>
+<body>
+	<div class="container">
+    <div class="content">
+	    <form action="" method="POST">
+		
+			<select id="cc_expire_month" name="cc_expire_month"><option value="01">Jan (01)</option><option value="02">Feb (02)</option><option value="03">Mar (03)</option><option value="04">Apr (04)</option><option value="05">May (05)</option><option value="06">Jun (06)</option><option value="07">Jul (07)</option><option value="08">Aug (08)</option><option value="09">Sep (09)</option><option value="10">Oct (10)</option><option value="11">Nov (11)</option><option value="12">Dec (12)</option></select> / <select id="cc_expire_year" name="cc_expire_year"><option value="17">2017</option><option value="18">2018</option><option value="19">2019</option><option value="20">2020</option><option value="21">2021</option><option value="22">2022</option><option value="23">2023</option><option value="24">2024</option><option value="25">2025</option><option value="26">2026</option><option value="27">2027</option><option value="28">2028</option><option value="29">2029</option><option value="30">2030</option><option value="31">2031</option><option value="32">2032</option><option value="33">2033</option><option value="34">2034</option><option value="35">2035</option><option value="36">2036</option><option value="37">2037</option></select>
+                    
+					
+					
+		<table border="0" width="100%">
+		<tbody>
+		<tr><td colspan="2"><h2>Init transaction</h2></td></tr>
+		<tr>
+		<td width="50%"><fieldset>
+            <legend><h3>Test server</h3></legend> 
+			<label><input type="radio" id="test_sms" name="group1" value="http://192.168.1.80/gw2test/gwprocessor2.php?a=init" checked="" /> SMS</label><br />
+			<label><input type="radio" id="test_dms" name="group1" value="http://192.168.1.80/gw2test/gwprocessor2.php?a=init_dms" /> DMS</label><br />
+			<label><input type="radio" id="test_crd" name="group1" value="http://192.168.1.80/gw2test/gwprocessor2.php?a=init_credit" /> CRD</label><br />
+			<label><input type="radio" id="test_p2p" name="group1" value="http://192.168.1.80/gw2test/gwprocessor2.php?a=init_p2p" /> P2P</label><br />
+			<label><input type="radio" id="test_mirror" name="group1" value="http://192.168.1.80/gw2test/mirror.php" /> mirror.php</label>
+        </fieldset></td>
+        <td width="50%"><fieldset>
+            <legend><h3>Production server</h3></legend>
+            <label><input type="radio" id="prod_sms" name="group1" value="https://www2.1stpayments.net/gwprocessor2.php?a=init" /> SMS</label><br />
+			<label><input type="radio" id="prod_dms" name="group1" value="https://www2.1stpayments.net/gwprocessor2.php?a=init_dms" /> DMS</label><br />
+			<label><input type="radio" id="prod_crd" name="group1" value="https://www2.1stpayments.net/gwprocessor2.php?a=init_credit" /> CRD</label><br />
+			<label><input type="radio" id="prod_p2p" name="group1" value="https://www2.1stpayments.net/gwprocessor2.php?a=init_p2p" /> P2P</label><br />
+			<label><input type="radio" id="prod_mirror" name="group1" value="https://www2.1stpayments.net/mirror.php" /> mirror.php</label>
+        </fieldset></td>
+        </tr>
+		<tr><td colspan="2"><br /><b>Auth data</b></td></tr>
+		<tr>
+		<td colspan="2"><fieldset>
+            <legend><h3>GUID / password</h3></legend>
+			<label><input type="radio" name="guid" id="SXQJ-9962-1AN0-F3F5" value="SXQJ-9962-1AN0-F3F5" checked="" /> SXQJ-9962-1AN0-F3F5</label><br />
+			<label><input type="radio" name="guid" id="MXLB-7560-BQCK-1508" value="MXLB-7560-BQCK-1508" /> MXLB-7560-BQCK-1508</label><br /><br />
+			<label><input type="text" name="pwd" id="pwd" size="34" value="40bd001563085fc35165329ea1ff5c5ecbdbbeef" /></label><br /><br />
+        </fieldset></td>
+        </tr>
+		<tr>
+        <td><fieldset>
+            <legend><h3>Routing string</h3></legend>			
+			<label><input type="radio" name="rs" id="HZFZ" value="HZFZ" checked="" /> HZFZ - 35 account<br /></label>
+			<label><input type="radio" name="rs" id="DC01" value="DC01" /> DC01 - Decta, No3D, merchant side<br /></label>
+			<label><input type="radio" name="rs" id="DC02" value="DC02" /> DC02 - Decta, 3D, merchant side<br /></label>
+			<label><input type="radio" name="rs" id="DC03" value="DC03" /> DC03 - Decta, No3D, GW side<br /></label>
+			<label><input type="radio" name="rs" id="DC04" value="DC04" /> DC04 - Decta 3D, GW side<br /></label>
+			<label><input type="radio" name="rs" id="FD01" value="FD01" /> FD01 - FDL, No3D, merchant side<br /></label>
+			<label><input type="radio" name="rs" id="FD02" value="FD02" /> FD02 - FDL, 3D, merchant side<br /></label>
+			<label><input type="radio" name="rs" id="FD03" value="FD03" /> FD03 - FDL, No3D, GW side<br /></label>
+			<label><input type="radio" name="rs" id="FD04" value="FD04" /> FD04 - FDL 3D, GW side<br /></label>
+        </fieldset>
+		
+		</td><td><fieldset>
+			<label><input type="radio" name="rs" id="TP01" value="TP01" /> TP01 - TransactPro, No3D, merchant side<br /></label>
+			<label><input type="radio" name="rs" id="TP02" value="TP02" /> TP02 - TransactPro, 3D, merchant side<br /></label>
+			<label><input type="radio" name="rs" id="TP03" value="TP03" /> TP03 - TransactPro, No3D, GW side<br /></label>
+			<label><input type="radio" name="rs" id="TP04" value="TP04" /> TP04 - TransactPro, 3D, GW side<br /></label>
+			<label><input type="radio" name="rs" id="PO01" value="PO01" /> PO01 - PayOn, 3D, merchant side</label>	
+			<br /><br /><br /><br /><br /><br />
+        </fieldset>
+		</td>
+        </tr>
+    <tr><td colspan="2"><b>Transaction data</b></td></tr>
+    <tr>
+	<td>Merchant transaction ID</td><td><input type="text" name="merchant_transaction_id" id="merchant_transaction_id" value="1498483971" /></td>
+    </tr>  
+        <tr>
+	<td>Amount (in minor units)</td><td><input type="text" name="amount" id="amount" value="10050" /></td>
+    </tr>    
+    <tr>
+	<td>Currency<br /></td><td><input type="radio" name="currency" id="USD" value="USD" checked="" />USD
+	<input type="radio" name="currency" id="EUR" value="EUR" />EUR
+	<input type="radio" name="currency" id="GBP" value="GBP" />GBP
+	<input type="radio" name="currency" id="CAD" value="CAD" />CAD	
+	<input type="radio" name="currency" id="CHF" value="CHF" />CHF	
+	<input type="radio" name="currency" id="AUD" value="AUD" />AUD
+	<input type="radio" name="currency" id="RUB" value="RUB" />RUB<br />
+	<input type="radio" name="currency" id="SEK" value="SEK" />SEK
+	<input type="radio" name="currency" id="DKK" value="DKK" />DKK	
+	<input type="radio" name="currency" id="PLN" value="PLN" />PLN
+	<input type="radio" name="currency" id="NOK" value="NOK" />NOK	
+    <input type="radio" name="currency" id="TRY" value="TRY" />TRY	
+    <input type="radio" name="currency" id="JPY" value="JPY" />JPY</td>
+    </tr> 
+    <tr><td colspan="2"><input type="button" id="butt" value="Process..." onclick="setNewAction(this.form.group1)" /></td></tr>	
+    <tr><td colspan="2"><br /><b>Details</b></td></tr> 
+	<tr><td>User IP</td>
+	<td><input type="radio" name="user_ip" value="192.168.1.28" checked="" /> 192.168.1.28<br />
+	<input type="radio" name="user_ip" value="87.110.182.18" />87.110.182.18	<br />
+	<input type="radio" name="user_ip" value="127.0.0.0" />127.0.0.0	
+	</td></tr><tr><td>Save card</td><td>
+	<input type="radio" name="save_card" id="save_card_0" value="0" checked="" />0 - not save<br />
+	<input type="radio" name="save_card" id="save_card_1" value="1" />1 - save card gateway side<br />
+	<input type="radio" name="save_card" id="save_card_2" value="2" />2 - save card processor side <br />
+	<input type="radio" name="save_card" id="save_card_3" value="3" />3 - save card gateway side (ONLY save_card method)<br />
+	<input type="radio" name="save_card" id="save_card_4" value="4" />4 - save card gateway side for MOTO (ONLY save_card method)<br />
+
+	
+	    </td>
+	</tr>
+	<tr><td>Customer id for card verification</td><td><input type="text" name="customer_id" id="customer_id" value="" class="" /></td>
+	</tr><tr>
+	<td>Check verified card</td>
+	<td>
+		<select name="check_saved_card" id="check_saved_card" class="">			<option value="0">Do not check card</option>
+			<option value="1">Allow only verified card</option>
+		</select> </td>
+	</tr>
+    <tr>
+	<td>CC first 6 digits</td><td><input type="text" name="card_bin" id="card_bin" value="546043" /></td>
+    </tr> 
+    <tr>
+	<td>Custom return URL</td><td><input type="text" name="custom_return_url" value="" /></td>
+    </tr>        
+    <tr>
+	<td>Custom callback URL</td><td><input type="text" name="custom_callback_url" value="" /></td>
+    </tr>  
+    <tr>
+	<td>Merchant user ID</td><td><input type="text" name="merchant_user_id" id="merchant_user_id" value="johny213" /></td>
+    </tr>    
+    <tr>
+	<td>Last Name</td><td><input type="text" name="description" id="description" value="Purchase qqq 100.5" /></td>
+    </tr>    
+    <tr>
+	<td>Address</td><td><input type="text" name="street" id="street" value="Test Street 123" /></td>
+    </tr>
+    <tr>
+	<td>ZIP</td><td><input type="text" name="zip" id="zip" value="2167" /></td>
+    </tr>
+    <tr>
+	<td>City</td><td><input type="text" name="city" id="city" value="Perfect city" /></td>
+    </tr>
+    <tr>
+	<td>Country</td><td><input type="text" name="country" id="country" value="LV" /></td>
+    </tr>
+    <tr>
+	<td>State</td><td><input type="text" name="state" id="state" value="none" /></td>
+    </tr>
+    <tr>
+	<td>Email</td><td><input type="text" name="email" id="email" value="nospam@not-existing-host-327856465455.com" /></td>
+    </tr>
+    <tr>
+	<td>Phone</td><td><input type="text" name="phone" id="phone" value="111-111-111-111-111" /></td>
+    </tr>
+    <tr>
+	<td>Merchant site</td><td><input type="text" name="merchant_site_url" id="merchant_site_url" value="www.notexistingmerchantsite.com" /></td>
+    </tr>
+	<tr>
+	<td>Bank Name</td><td><input type="text" name="bin_name" id="bin_name" value="SwedBank" /></td>
+    </tr>    
+    <tr>
+	<td>Bank Phone</td><td><input type="text" name="bin_phone" id="bin_phone" value="371-111111111111111111" /></td>
+    </tr> 
+	<tr><td colspan="2"><br /><b>Details for P2P</b></td></tr>
+	<tr>
+    <td>Sender birth date, DDMMYYYY (client_birth_date for p2p)</td><td><input type="text" name="client_birth_date" id="client_birth_date" value="16061981" /></td>
+    </tr>
+    <tr>
+    <td>Recipient cardholder name (cardname for p2p)</td><td><input type="text" name="cardname" id="cardname" value="Jane Smitt Doe" /></td>
+    </tr>
+    <tr><td>Recipient name (recipient_name for p2p)</td><td><input type="text" name="recipient_name" id="recipient_name" value="Jane Smitt Doe" /></td>
+	</tr><tr>
+	<td>Name On Card (Sender name_on_card for p2p)</td>	<td><input type="text" name="name_on_card" id="name_on_card" value="John Smitt Doe" /></td>
+    </tr> 
+	<tr><td colspan="2"><br /><b>Extended Data</b></td></tr>
+    <tr>
+	<td>Shipping Name</td><td><input type="text" name="shipping_name" id="shipping_name" value="Bob Marley" /></td>
+    </tr>
+    <tr>
+	<td>Shipping Phone</td><td><input type="text" name="shipping_phone" id="shipping_phone" value="222-222-2222222222222" /></td>
+    </tr>
+    <tr>
+	<td>Shipping Email</td><td><input type="text" name="shipping_email" id="shipping_email" value="jah@not-existing-host-3874364765.com" /></td>
+    </tr>
+    <tr>
+	<td>Shipping State</td><td><input type="text" name="shipping_state" id="shipping_state" value="none" /></td>
+    </tr>
+    <tr>
+	<td>Shipping Country</td><td><input type="text" name="shipping_country" id="shipping_country" value="LV" /></td>
+    </tr>
+    <tr>
+	<td>Shipping City</td><td><input type="text" name="shipping_city" id="shipping_city" value="Kingston" /></td>
+    </tr>
+    <tr>
+	<td>Shipping ZIP</td><td><input type="text" name="shipping_zip" id="shipping_zip" value="1101" /></td>
+    </tr>
+    <tr>
+	<td>Shipping Street</td><td><input type="text" name="shipping_street" id="shipping_street" value="Demo Street 321" /></td>
+    </tr>
+	<tr><td><input type="button" id="butt" value="Process..." onclick="setNewAction(this.form.group1)" /></td></tr>
+	</tbody>
+	</table>
+	</form>
+	</div>
+	</div>
+
+
+</body></html>

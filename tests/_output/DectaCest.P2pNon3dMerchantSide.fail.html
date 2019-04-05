@@ -1,0 +1,15 @@
+unknown commandGET /wd/hub/session//source did not match a known commandstack backtrace:
+   0:           0x4fa94d - backtrace::backtrace::trace::h45ace4059cd74233
+   1:           0x4fae32 - backtrace::capture::Backtrace::new::hb5a725a088a2a2fc
+   2:           0x4349d9 - webdriver::error::WebDriverError::new::h449345a591a119fd
+   3:           0x429a0b - <webdriver::server::HttpHandler<U> as hyper::server::Handler>::handle::h464126b9de8bccc4
+   4:           0x406d83 - std::panicking::try::do_call::h26a4a61aaab84e76
+   5:           0x5b77fa - panic_unwind::__rust_maybe_catch_panic
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-musl-linux/build/src/libpanic_unwind/lib.rs:98
+   6:           0x4170ff - <F as alloc::boxed::FnBox<A>>::call_box::h5bc17fbe43f7212f
+   7:           0x5b0014 - alloc::boxed::{{impl}}::call_once<(),()>
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-musl-linux/build/src/liballoc/boxed.rs:624
+                         - std::sys_common::thread::start_thread
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-musl-linux/build/src/libstd/sys_common/thread.rs:21
+                         - std::sys::imp::thread::{{impl}}::new::thread_start
+                        at /buildslave/rust-buildbot/slave/stable-dist-rustc-musl-linux/build/src/libstd/sys/unix/thread.rs:84

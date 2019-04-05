@@ -1,0 +1,87 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Charge/Hold transaction</title>
+    	<meta name="description" content="" />
+        <link rel="stylesheet" href="styles/styles.css" />
+        <script language="javascript">
+    function setNewAction(radioGroupObj){
+		for(var i = 0 ; i &lt; radioGroupObj.length ; i++){
+                if(radioGroupObj[i].checked){
+                     document.forms[0].action = radioGroupObj[i].value;
+                }
+        }document.forms[0].submit();
+    }
+            </script>
+
+</head>
+<body>
+	<div class="container">
+    <div class="content">
+	    <form action="" method="POST">
+		<table border="0" width="100%">
+		<tbody>
+		<tr><td colspan="2"><h2>Charge/Hold transaction</h2></td></tr>
+		<tr>
+		<td width="50%"><fieldset>
+            <legend><h3>Test server</h3></legend>
+			<label><input type="radio" id="test_sms" name="group1" value="http://192.168.1.80/gw2test/gwprocessor2.php?a=charge" checked="" /> SMS</label><br />
+			<label><input type="radio" id="test_dms" name="group1" value="http://192.168.1.80/gw2test/gwprocessor2.php?a=make_hold" /> DMS</label><br />
+			<label><input type="radio" id="test_crd" name="group1" value="http://192.168.1.80/gw2test/gwprocessor2.php?a=do_credit" /> CRD</label><br />
+			<label><input type="radio" id="test_p2p" name="group1" value="http://192.168.1.80/gw2test/gwprocessor2.php?a=do_p2p" /> P2P</label><br />
+			<label><input type="radio" id="test_mirror" name="group1" value="http://192.168.1.80/gw2test/mirror.php" /> mirror.php</label>
+        </fieldset></td>
+        <td width="50%"><fieldset>
+            <legend><h3>Production server</h3></legend>
+            <label><input type="radio" id="prod_sms" name="group1" value="https://www2.1stpayments.net/gwprocessor2.php?a=charge" /> SMS</label><br />
+			<label><input type="radio" id="prod_dms" name="group1" value="https://www2.1stpayments.net/gwprocessor2.php?a=make_hold" /> DMS</label><br />
+			<label><input type="radio" id="prod_crd" name="group1" value="https://www2.1stpayments.net/gwprocessor2.php?a=do_credit" /> CRD</label><br />
+			<label><input type="radio" id="prod_p2p" name="group1" value="https://www2.1stpayments.net/gwprocessor2.php?a=do_p2p" /> P2P</label><br />
+			<label><input type="radio" id="prod_mirror" name="group1" value="https://www2.1stpayments.net/mirror.php" /> mirror.php</label>
+        </fieldset></td>
+        </tr> 
+	<tr><td colspan="2"><br /><b>Auth data</b></td></tr>
+    <tr>
+	<td>Init transaction ID</td>
+	<td><input type="text" name="init_transaction_id" id="init_transaction_id" value="" /></td>
+    </tr>    
+    <tr>
+	<td>CC number</td>
+	<td><input type="text" name="cc" id="cc" value="" maxlength="16" /></td>
+    </tr>    
+    <tr>
+	<td>CC expire</td>
+	<td><input type="text" name="expire" id="expire" value="" /></td>
+    </tr>    
+	
+	
+
+
+    <tr>
+	<td>CC CVV</td>
+	<td><input type="text" name="cvv" id="cvv" value="" /></td>
+    </tr>
+	<tr>
+	<td>f_extended</td>
+	<td><input type="text" name="f_extended" id="f_extended" value="" /></td>
+    </tr> 
+	<tr>
+	<td>merchant_referring_url</td>
+	<td><input type="text" name="merchant_referring_url" id="merchant_referring_url" value="" /></td>
+    </tr>      
+    <tr>
+	<td>direct_terminal_selection</td>
+	<td><input type="text" name="direct_terminal_selection" id="direct_terminal_selection" value="" /></td>
+    </tr> 
+    <tr>
+    <td>Recipient card number</td>
+    <td><input type="text" name="cc_2" id="cc_2" value="" maxlength="19" /></td>
+    </tr>
+	<tr><td><input type="button" id="ln_submit" value="Process..." onclick="setNewAction(this.form.group1)" /></td></tr>
+	</tbody>
+	</table>
+	</form>
+	</div>
+	</div>
+
+
+</body></html>
